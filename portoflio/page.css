@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #1f242d;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 9%;
+  background: slateblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar ul li {
+  list-style: none;
+  margin-left: 35px;
+}
+
+.navbar ul li a {
+  font-size: 20px;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.navbar ul li:hover a,
+.navbar ul li.active a {
+  color: #7cf03d;
+}
+
+
+/* Home Section */
+.home {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 100px 9% 0;
+  position: relative;
+  z-index: 1;
+}
+
+.home-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.home-info h1 {
+  font-size: 60px;
+}
+
+.home-info h2 {
+  font-size: 35px;
+  margin-top: -5px;
+}
+
+.home-info p {
+  font-size: 16px;
+  margin: 10px 0 20px;
+}
+
+.btn-sci {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 30px;
+  background: #7cf03d;
+  border: 2px solid #7cf03d;
+  border-radius: 40px;
+  box-shadow: 0 0 10px #7cf03d;
+  font-size: 16px;
+  color: #1f242d;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: #7cf03d;
+  box-shadow: none;
+}
+
+.sci {
+  margin-left: 20px;
+}
+
+.sci a {
+  display: inline-flex;
+  padding: 8px;
+  border: 2px solid #7cf03d;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #7cf03d;
+  margin: 0 8px;
+  transition: 0.5s;
+}
+
+.sci a:hover {
+  background: #7cf03d;
+  color: #1f242d;
+  box-shadow: 0 0 10px #7cf03d;
+}
+
+/* Image */
+.home-img {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-box {
+  width: 32vw;
+  height: 32vw;
+  background: red;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #0d3e9b;
+  border-radius: 50%;
+  border: 0.1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.img-item img {
+  position: absolute;
+  top: 30px;
+  width: 85%;
+  object-fit: cover;
+  mix-blend-mode: lighten;
+}
+
+/* Background Bars Animation */
+.bars-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -1;
+}
+
+/* Bars animation — make red subtle or greenish */
+.bars-animation .bars {
+  flex: 1;
+  background: #1f242d;
+  border-left: 1px solid rgba(124, 240, 61, 0.2); /* soft green */
+  transform: translateY(-100%);
+  animation: show-bars 0.5s ease-in-out forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+/* Image border — remove or tone down */
+.img-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #1f242d;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* subtle white glow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Image background — from red to soft dark */
+.img-box {
+  width: 32vw;
+  height: 32vw;
+  background: red; /* darker, neutral tone */
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Tooltip Email */
+.tooltip-email {
+  position: relative;
+}
+
+.tooltip-email .tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #7cf03d;
+  color: #1f242d;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 13px;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip-email:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
